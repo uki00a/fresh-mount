@@ -15,7 +15,8 @@
       "tags": [
         "fresh",
         "recommended"
-      ]
+      ],
+      "include": ["no-console"]
     }
   },
   "test": {
