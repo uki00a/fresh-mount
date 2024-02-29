@@ -8,7 +8,7 @@
     "build": "deno run -A demo/dev.ts build",
     "preview": "deno run -A demo/main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update .",
-    "test": "deno test --allow-env --allow-read=. --location=http://localhost:3000"
+    "test": "deno test --allow-env --allow-read=. --doc --location=http://localhost:3000"
   },
   "lint": {
     "rules": {
