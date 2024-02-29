@@ -76,5 +76,13 @@ Deno.test("integration tests", async (t) => {
       assertObjectMatch(await res.json(), { content });
       assertStrictEquals(res.status, 200);
     });
+
+    await t.step("support `Context.request.ip`", async () => {
+      const res = await handler(new Request("/api/oak/ip"), {
+        remoteAddr: { transport: "tcp", hostname: "example.com", port: 443 },
+      });
+      assertStrictEquals(res.status, 200);
+      assertStrictEquals(await res.text(), "example.com");
+    });
   });
 });

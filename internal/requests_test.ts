@@ -1,7 +1,14 @@
-import { stripPathPrefix } from "./requests.ts";
+import { isSecure, stripPathPrefix } from "./requests.ts";
 import { assert } from "$std/assert/assert.ts";
 import { assertStrictEquals } from "$std/assert/assert_strict_equals.ts";
 import { assertEquals } from "$std/assert/assert_equals.ts";
+
+Deno.test("isSecure", {
+  permissions: "none",
+}, () => {
+  assert(!isSecure(new Request("http://localhost:3000/")));
+  assert(isSecure(new Request("https://localhost:3000/")));
+});
 
 Deno.test("stripPathPrefix", {
   permissions: "none",
