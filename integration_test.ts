@@ -56,4 +56,25 @@ Deno.test("integration tests", async (t) => {
       assertStrictEquals(res.status, 200);
     });
   });
+
+  await t.step("oak", async (t) => {
+    await t.step("request to the root URL", async () => {
+      const res = await handler(new Request("/api/oak"));
+      assertStrictEquals(await res.text(), "Hello Oak!");
+      assertStrictEquals(res.status, 200);
+    });
+
+    await t.step("request to a non-root URL", async () => {
+      const content = faker.lorem.text();
+      const res = await handler(
+        new Request("/api/oak/posts", {
+          method: "POST",
+          body: JSON.stringify({ content }),
+          headers: { "content-type": "text/json" },
+        }),
+      );
+      assertObjectMatch(await res.json(), { content });
+      assertStrictEquals(res.status, 200);
+    });
+  });
 });

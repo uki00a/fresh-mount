@@ -37,8 +37,14 @@
     "@twind/preset-autoprefix": "https://esm.sh/@twind/preset-autoprefix@1.0.7/",
     "$std/": "https://deno.land/std@0.211.0/",
     "@faker-js/faker": "https://esm.sh/@faker-js/faker@8.4.1?pin=v135",
+
     "$fresh-mount/hono": "./hono/mod.ts",
-    "$hono": "https://deno.land/x/hono@v4.0.8/mod.ts"
+    "$fresh-mount/oak": "./oak/mod.ts",
+    "https://deno.land/x/fresh_mount@$MODULE_VERSION/": "./",
+    "$hono": "https://deno.land/x/hono@v4.0.8/mod.ts",
+    "https://deno.land/x/hono/mod.ts": "https://deno.land/x/hono@v4.0.8/mod.ts",
+    "$oak": "https://deno.land/x/oak@v14.0.0/mod.ts",
+    "https://deno.land/x/oak/mod.ts": "https://deno.land/x/oak@v14.0.0/mod.ts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
