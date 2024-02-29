@@ -22,3 +22,7 @@ export function stripPathPrefix(request: Request, pathPrefix: string): Request {
     signal: request.signal,
   });
 }
+
+export function isSecure(request: Request): boolean {
+  return new URL(request.url).protocol === "https:";
+}

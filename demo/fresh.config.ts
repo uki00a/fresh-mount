@@ -21,6 +21,9 @@ oakRouter
   .get("/", (ctx) => {
     ctx.response.body = "Hello Oak!";
   })
+  .get("/ip", (ctx) => {
+    ctx.response.body = ctx.request.ip;
+  })
   .post("/posts", async (ctx) => {
     const post = await ctx.request.body.json();
     ctx.response.body = { ...post, id: crypto.randomUUID() };
