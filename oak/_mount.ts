@@ -1,6 +1,6 @@
-import { isSecure, stripPathPrefix } from "../internal/requests.ts";
-import { stripSuffix } from "../internal/strings.ts";
-import type { FreshContext } from "../internal/fresh.ts";
+import { isSecure, stripPathPrefix } from "../_internal/requests.ts";
+import { stripSuffix } from "../_internal/strings.ts";
+import type { FreshContext } from "../_internal/fresh.ts";
 
 interface Application {
   handle(
