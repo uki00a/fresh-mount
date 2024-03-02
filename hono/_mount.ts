@@ -1,5 +1,5 @@
-import { stripPathPrefix } from "../internal/requests.ts";
-import { stripSuffix } from "../internal/strings.ts";
+import { stripPathPrefix } from "../_internal/requests.ts";
+import { stripSuffix } from "../_internal/strings.ts";
 
 interface Hono {
   fetch(request: Request): Response | Promise<Response>;
